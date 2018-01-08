@@ -6,7 +6,10 @@ application = Flask(__name__)
 def hello():
     retv = dict()
     for k, v in os.environ.iteritems():
-        retv += "%s: %s\n" % (k, v)
+        try:
+            retv += "%s: %s\n" % (k, v)
+        except:
+            pass
     return retv
 
 if __name__ == "__main__":
