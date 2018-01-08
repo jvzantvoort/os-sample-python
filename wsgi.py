@@ -4,7 +4,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    retv = dict()
+    retv = str()
     for k, v in os.environ.iteritems():
         try:
             retv += "%s: %s\n" % (k, v)
