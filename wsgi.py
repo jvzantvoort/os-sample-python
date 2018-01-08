@@ -5,11 +5,8 @@ application = Flask(__name__)
 @application.route("/")
 def hello():
     retv = str()
-    for k, v in os.environ.iteritems():
-        try:
-            retv += "%s: %s\n" % (k, v)
-        except:
-            pass
+    for k, v in os.environ.items():
+        retv += "%s: %s\n" % (k, v)
     return retv
 
 if __name__ == "__main__":
